@@ -1,0 +1,70 @@
+{
+  "id": "word-highlight",
+  "version": "1.0.0",
+  "name": "Word Highlight",
+  "description": "A readable phrase with the currently spoken word lifted onto a warm highlight box (karaoke timing from final word timings).",
+  "fonts": [
+    {
+      "family": "Poppins",
+      "file": "Poppins-Bold.ttf",
+      "weight": 700,
+      "style": "normal"
+    }
+  ],
+  "base": {
+    "family": "Poppins",
+    "weight": 700,
+    "sizePx": 64,
+    "color": "#FFFFFF",
+    "stroke": {
+      "color": "#0B0B0F",
+      "widthPx": 8
+    },
+    "shadow": "0 4px 12px rgba(0,0,0,0.45)",
+    "box": null,
+    "lineHeight": 1.18,
+    "letterSpacingEm": 0,
+    "case": "as-spoken"
+  },
+  "emphasis": {
+    "mode": "current-word",
+    "treatment": {
+      "color": "#111111",
+      "stroke": null,
+      "box": {
+        "color": "#FFD23F",
+        "radiusPx": 14,
+        "padX": 12,
+        "padY": 2
+      }
+    },
+    "maxWordsPerChunk": 1
+  },
+  "grouping": {
+    "minWords": 2,
+    "maxWords": 5,
+    "maxCharsPerLine": 20,
+    "maxLines": 2,
+    "pauseSplitMs": 380,
+    "minChunkMs": 500,
+    "maxChunkMs": 2600,
+    "holdAfterMs": 220,
+    "maxReadingCps": 24
+  },
+  "placement": {
+    "zone": {
+      "y0": 1190,
+      "y1": 1460
+    },
+    "maxWidthPx": 860,
+    "align": "center"
+  },
+  "animation": {
+    "enter": "none",
+    "exit": "cut",
+    "durationMs": 0,
+    "intensity": 0.4
+  },
+  "emoji": false,
+  "censor": "none"
+}

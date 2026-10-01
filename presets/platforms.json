@@ -1,0 +1,15 @@
+{
+  "note": "Approximate platform UI overlays on a 1080x1920 canvas (pixels to keep clear of essential text). These are configurable guides, not guarantees: platform interfaces change and differ by device/locale. Override per project.",
+  "canvas": { "width": 1080, "height": 1920 },
+  "guides": {
+    "generic-9x16": { "top": 120, "bottom": 360, "left": 60, "right": 110 },
+    "youtube-shorts": { "top": 140, "bottom": 380, "left": 60, "right": 130 },
+    "tiktok": { "top": 130, "bottom": 470, "left": 60, "right": 150 },
+    "instagram-reels": { "top": 220, "bottom": 420, "left": 60, "right": 130 }
+  },
+  "limits": {
+    "youtube-shorts": { "maxDurationSec": 180, "verifiedAt": null, "note": "Verify current limit before platform-specific export." },
+    "tiktok": { "maxDurationSec": 600, "verifiedAt": null, "note": "Verify current limit before platform-specific export." },
+    "instagram-reels": { "maxDurationSec": 180, "verifiedAt": null, "note": "Verify current limit before platform-specific export." }
+  }
+}

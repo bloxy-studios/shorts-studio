@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "shorts-studio",
+  "displayName": "Shorts Studio",
+  "version": "0.1.0",
+  "description": "Turn YouTube links or local recordings into polished 9:16 shorts: real audiovisual analysis, ranked moments with evidence, speaker-aware framing, designed captions, HyperFrames graphics, code-synthesized audio, measured QA and natural-language revisions.",
+  "author": { "name": "Shorts Studio" },
+  "license": "MIT",
+  "keywords": ["video", "shorts", "reels", "tiktok", "editing", "captions", "hyperframes", "ffmpeg", "youtube", "podcast"]
+}

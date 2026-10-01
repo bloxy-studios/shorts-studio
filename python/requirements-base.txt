@@ -1,0 +1,8 @@
+# Core numeric/audio/image stack (CPU-only, x86_64 + arm64 macOS wheels).
+numpy>=2.1,<3
+scipy>=1.14,<2
+soundfile>=0.12
+pyloudnorm>=0.1.1
+pillow>=11
+fonttools>=4.55
+opencv-python-headless>=4.10,<5

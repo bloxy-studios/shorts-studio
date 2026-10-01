@@ -1,0 +1,82 @@
+{
+  "id": "luxury-tech",
+  "version": "1.0.0",
+  "name": "Luxury Tech",
+  "description": "Poppins Bold 74 px white with a 10 px black stroke and no box; after two or three normal chunks, one or two meaningful words switch to Instrument Serif italic in #FFFF00 with a comparable size and stroke.",
+  "fonts": [
+    {
+      "family": "Poppins",
+      "file": "Poppins-Bold.ttf",
+      "weight": 700,
+      "style": "normal"
+    },
+    {
+      "family": "Instrument Serif",
+      "file": "InstrumentSerif-Italic.ttf",
+      "weight": 400,
+      "style": "italic"
+    }
+  ],
+  "base": {
+    "family": "Poppins",
+    "weight": 700,
+    "sizePx": 74,
+    "color": "#FFFFFF",
+    "stroke": {
+      "color": "#000000",
+      "widthPx": 10
+    },
+    "shadow": null,
+    "box": null,
+    "lineHeight": 1.1,
+    "letterSpacingEm": 0,
+    "case": "as-spoken"
+  },
+  "emphasis": {
+    "mode": "cadence",
+    "treatment": {
+      "family": "Instrument Serif",
+      "style": "italic",
+      "weight": 400,
+      "sizePx": 88,
+      "color": "#FFFF00",
+      "stroke": {
+        "color": "#000000",
+        "widthPx": 10
+      }
+    },
+    "cadence": {
+      "minNormalChunks": 2,
+      "maxNormalChunks": 3,
+      "maxWords": 2
+    },
+    "maxWordsPerChunk": 2
+  },
+  "grouping": {
+    "minWords": 1,
+    "maxWords": 3,
+    "maxCharsPerLine": 16,
+    "maxLines": 2,
+    "pauseSplitMs": 260,
+    "minChunkMs": 300,
+    "maxChunkMs": 1500,
+    "holdAfterMs": 120,
+    "maxReadingCps": 26
+  },
+  "placement": {
+    "zone": {
+      "y0": 1267,
+      "y1": 1536
+    },
+    "maxWidthPx": 860,
+    "align": "center"
+  },
+  "animation": {
+    "enter": "none",
+    "exit": "cut",
+    "durationMs": 0,
+    "intensity": 0
+  },
+  "emoji": false,
+  "censor": "none"
+}

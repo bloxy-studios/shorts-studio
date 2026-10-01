@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "clipId": "clip-01",
+  "renderId": "r002",
+  "planVersion": 2,
+  "createdAt": "2026-10-01T10:05:43.673Z",
+  "findings": [
+    {
+      "id": "qa001",
+      "check": "export.spec",
+      "category": "export",
+      "severity": "hard",
+      "status": "pass",
+      "message": "H.264 1080x1920 yuv420p @ 60000/1001 fps, 1963 frames, AAC 48000 Hz 2 ch",
+      "evidence": {
+        "frames": [],
+        "times": [],
+        "measurements": {
+          "videoStream": {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.64002a",
+            "width": 1080,
+            "height": 1920,
+            "coded_width": 1080,
+            "coded_height": 1920,
+            "has_b_frames": 2,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "9:16",
+            "pix_fmt": "yuv420p",
+            "level": 42,
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "60000/1001",
+            "avg_frame_rate": "60000/1001",
+            "time_base": "1/60000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 1964963,
+            "duration": "32.749383",
+            "bit_rate": "5409462",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "1963",
+            "nb_read_packets": "1963",
+            "extradata_size": 50,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc62.28.102 libx264"
+            }
+          },
+          "audioStream": {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 1571952,
+            "duration": "32.749000",
+            "bit_rate": "192607",
+            "nb_frames": "1537",
+            "nb_read_packets": "1537",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "SoundHandler"
+            }
+          },
+          "formatDuration": "32.749383",
+          "color": "bt709/bt709/bt709"
+        }
+      },
+      "affects": {
+        "segmentIds": [],
+        "runIds": [],
+        "chunkIds": [],
+        "eventIds": []
+      }
+    },
+    {
+      "id": "qa002",
+      "check": "export.decode",
+      "category": "export",
+      "severity": "hard",
+      "status": "pass",
+      "message": "entire file decodes without errors",
+      "evidence": {
+        "frames": [],
+        "times": [],
+        "measurements": {}
+      },
+      "affects": {
+        "segmentIds": [],
+        "runIds": [],
+        "chunkIds": [],
+        "eventIds": []
+      }
+    },
+    {
+      "id": "qa003",
+      "check": "audio.loudness",
+      "category": "audio",
+      "severity": "soft",
+      "status": "pass",
+      "message": "delivered integrated loudness -14.00 LUFS (target -14 ±1.0 after AAC; master WAV -14.04 LUFS)",
+      "evidence": {
+        "frames": [],
+        "times": [],
+        "measurements": {
+          "integratedLufs": -14,
+          "lraLu": 2.1,
+          "truePeakDbtp": -1.8,
+          "samplePeakDbfs": -1.8,
+          "masterWav": {
+            "path": "projects/iss-interview/clips/clip-01/renders/r002/master.wav",
+            "durationSamples": 1571970,
+            "sampleRate": 48000,
+            "channels": 2,
+            "integratedLufs": -14.042289931802221,
+            "samplePeakDbfs": -1.8944010260897217,
+            "truePeakDbtp": -1.8839524934366296
+          }
+        }
+      },
+      "affects": {
+        "segmentIds": [],
+        "runIds": [],
+        "chunkIds": [],
+        "eventIds": []
+      }
+    },
+    {
+      "id": "qa004",
+      "check": "audio.true-peak",
+      "category": "audio",
+      "severity": "hard",
+      "status": "pass",
+      "message": "delivered true peak -1.80 dBTP (ceiling -1 dBTP)",
+      "evidence": {
+        "frames": [],
+        "times": [],
+        "measurements": {
+          "truePeakDbtp": -1.8
+        }
+      },
+      "affects": {
+        "segmentIds": [],
+        "runIds": [],
+        "chunkIds": [],
+        "eventIds": []
+      }
+    },
+    {
+      "id": "qa005",
+      "check": "audio.stem-length",
+      "category": "audio",
+      "severity": "hard",
+      "status": "pass",
+      "message": "1 stem(s) all exactly 1571970 samples (END)",
+      "evidence": {
+        "frames": [],
+        "times": [],
+        "measurements": {
+          "voice": 1571970
+        }
+      },
+      "affects": {
+        "segmentIds": [],
+        "runIds": [],
+        "chunkIds": [],
+        "eventIds": []
+      }
+    },
+    {
+      "id": "qa006",
+      "check": "captions.sync",
+      "category": "captions",
+      "severity": "hard",
+      "status": "pass",
+      "message": "24/24 caption chunks overlap measured speech in the final mix; median onset lag 0 ms",
+      "evidence": {
+        "frames": [],
+        "times": [],
+        "measurements": {
+          "silentChunks": [],
+          "medianOnsetLagMs": 0
+        }
+      },
+      "affects": {
+        "segmentIds": [],
+        "runIds": [],
+        "chunkIds": [],
+        "eventIds": []
+      }
+    },
+    {
+      "id": "qa007",
+      "check": "captions.safe-area",
+      "category": "captions",
+      "severity": "soft",
+      "status": "warn",
+      "message": "3 caption chunk(s) extend into the generic-9x16 UI guide margins (approximate guides)",
+      "evidence": {
+        "frames": [],
+        "times": [],
+        "measurements": {
+          "guides": {
+            "top": 120,
+            "bottom": 360,
+            "left": 60,
+            "right": 110
+          },
+          "chunks": [
+            "cc003",
+            "cc004",
+            "cc005"
+          ]
+        }
+      },
+      "affects": {
+        "segmentIds": [],
+        "runIds": [],
+        "chunkIds": [
+          "cc003",
+          "cc004",
+          "cc005"
+        ],
+        "eventIds": []
+      }
+    },
+    {
+      "id": "qa008",
+      "check": "captions.face-collision",
+      "category": "captions",
+      "severity": "soft",
+      "status": "pass",
+      "message": "no rendered caption overlaps a detected face (5 fps face samples)",
+      "evidence": {
+        "frames": [],
+        "times": [],
+        "measurements": {
+          "hits": []
+        }
+      },
+      "affects": {
+        "segmentIds": [],
+        "runIds": [],
+        "chunkIds": [],
+        "eventIds": []
+      }
+    },
+    {
+      "id": "qa009",
+      "check": "video.black-frozen",
+      "category": "export",
+      "severity": "soft",
+      "status": "pass",
+      "message": "no black or frozen stretches detected",
+      "evidence": {
+        "frames": [],
+        "times": [],
+        "measurements": {
+          "blacks": [],
+          "freezes": []
+        }
+      },
+      "affects": {
+        "segmentIds": [],
+        "runIds": [],
+        "chunkIds": [],
+        "eventIds": []
+      }
+    },
+    {
+      "id": "qa010",
+      "check": "timing.end",
+      "category": "timing",
+      "severity": "hard",
+      "status": "pass",
+      "message": "voice ends at 32732.7 ms; END 32749.4 ms = frame 1963 (tail 16.7 ms < 1 frame)",
+      "evidence": {
+        "frames": [],
+        "times": [],
+        "measurements": {}
+      },
+      "affects": {
+        "segmentIds": [],
+        "runIds": [],
+        "chunkIds": [],
+        "eventIds": []
+      }
+    }
+  ],
+  "inspection": [
+    {
+      "what": "automated technical, timing, loudness and caption-geometry checks",
+      "how": "automated",
+      "notes": "10 checks recorded"
+    },
+    {
+      "what": "full playback",
+      "how": "not-performed",
+      "notes": "This environment cannot watch video in real time; review preview_540x960.mp4 in a player."
+    },
+    {
+      "what": "visual review of cuts.jpg and contact.jpg after revision v2",
+      "how": "agent-visual",
+      "notes": "FIXED: 0:00-0:04.3 is now a two-shot (left astronaut speaking into the mic, colleague listening) - no misattributed listener. 0:10.48 switch to the mic holder (T44) still correct; 0:16.48 fallback two-shot correct. Minor: 4.30 s pause-compression join between two two-shots shifts framing by a few px (continuity improvement queued). Captions legible, active word correct."
+    }
+  ],
+  "summary": {
+    "hardFailures": 0,
+    "softFailures": 0,
+    "warnings": 1,
+    "passed": 9,
+    "notRun": 0,
+    "verdict": "pass-with-warnings"
+  }
+}

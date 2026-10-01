@@ -1,0 +1,130 @@
+{
+  "speedPxPerS": 1200,
+  "sigmaPx": 4.3500000000000005,
+  "expected10_90": {
+    "gaussian": 11.149050000000003,
+    "boxShutter": 12
+  },
+  "integrate": {
+    "frames": 90,
+    "leftover": 0,
+    "weights": [
+      0.3333,
+      0.3333,
+      0.3333,
+      0
+    ]
+  },
+  "velocity": [
+    {
+      "frame": 5,
+      "width10_90": 3.39,
+      "edgeX": 799,
+      "contrast": -245,
+      "label": "velocity σ",
+      "expectedEdgeX": 1000,
+      "moving": false
+    },
+    {
+      "frame": 10,
+      "width10_90": 3.39,
+      "edgeX": 799,
+      "contrast": -245,
+      "label": "velocity σ",
+      "expectedEdgeX": 1000,
+      "moving": false
+    },
+    {
+      "frame": 30,
+      "width10_90": 13.66,
+      "edgeX": 499,
+      "contrast": -246.8,
+      "label": "velocity σ",
+      "expectedEdgeX": 700,
+      "moving": true
+    },
+    {
+      "frame": 36,
+      "width10_90": 13.75,
+      "edgeX": 379,
+      "contrast": -245,
+      "label": "velocity σ",
+      "expectedEdgeX": 580,
+      "moving": true
+    },
+    {
+      "frame": 42,
+      "width10_90": 13.55,
+      "edgeX": 259,
+      "contrast": -243,
+      "label": "velocity σ",
+      "expectedEdgeX": 460,
+      "moving": true
+    },
+    {
+      "frame": 48,
+      "width10_90": 11.7,
+      "edgeX": 138,
+      "contrast": -229,
+      "label": "velocity σ",
+      "expectedEdgeX": 340,
+      "moving": true
+    }
+  ],
+  "subframe": [
+    {
+      "frame": 5,
+      "width10_90": 2.79,
+      "edgeX": 799,
+      "contrast": -243,
+      "label": "240→60 (3/4)",
+      "expectedEdgeX": 1000,
+      "moving": false
+    },
+    {
+      "frame": 10,
+      "width10_90": 2.79,
+      "edgeX": 799,
+      "contrast": -243,
+      "label": "240→60 (3/4)",
+      "expectedEdgeX": 1000,
+      "moving": false
+    },
+    {
+      "frame": 30,
+      "width10_90": 10.7,
+      "edgeX": 499,
+      "contrast": -244,
+      "label": "240→60 (3/4)",
+      "expectedEdgeX": 700,
+      "moving": true
+    },
+    {
+      "frame": 36,
+      "width10_90": 10.65,
+      "edgeX": 379,
+      "contrast": -242,
+      "label": "240→60 (3/4)",
+      "expectedEdgeX": 580,
+      "moving": true
+    },
+    {
+      "frame": 42,
+      "width10_90": 10.68,
+      "edgeX": 259,
+      "contrast": -241,
+      "label": "240→60 (3/4)",
+      "expectedEdgeX": 460,
+      "moving": true
+    },
+    {
+      "frame": 48,
+      "width10_90": 10.38,
+      "edgeX": 139,
+      "contrast": -226,
+      "label": "240→60 (3/4)",
+      "expectedEdgeX": 340,
+      "moving": true
+    }
+  ]
+}

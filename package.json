@@ -1,0 +1,25 @@
+{
+  "name": "shorts-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Claude Code plugin: analyze YouTube/local video and produce polished 9:16 shorts with code-driven editing, captions, HyperFrames graphics and synthesized audio.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "bun": ">=1.2.0"
+  },
+  "scripts": {
+    "ss": "bun packages/cli/src/main.ts",
+    "test": "bun test tests/core tests/cli",
+    "test:py": "bun packages/cli/src/main.ts doctor --run-python-tests",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "bun build packages/cli/src/main.ts --target=bun --outfile dist/shorts-studio.js"
+  },
+  "dependencies": {
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.2",
+    "typescript": "7.0.2"
+  }
+}

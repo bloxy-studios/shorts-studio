@@ -1,0 +1,64 @@
+{
+  "id": "bold-pop",
+  "version": "1.0.0",
+  "name": "Bold Pop",
+  "description": "Short uppercase groups in condensed Anton with a thick stroke; each group pops in with a controlled scale change and meaningful words turn yellow.",
+  "fonts": [
+    {
+      "family": "Anton",
+      "file": "Anton-Regular.ttf",
+      "weight": 400,
+      "style": "normal"
+    }
+  ],
+  "base": {
+    "family": "Anton",
+    "weight": 400,
+    "sizePx": 104,
+    "color": "#FFFFFF",
+    "stroke": {
+      "color": "#000000",
+      "widthPx": 12
+    },
+    "shadow": "0 6px 0 rgba(0,0,0,0.35)",
+    "box": null,
+    "lineHeight": 1.02,
+    "letterSpacingEm": 0.01,
+    "case": "upper"
+  },
+  "emphasis": {
+    "mode": "semantic",
+    "treatment": {
+      "color": "#FFE600",
+      "scale": 1.06
+    },
+    "maxWordsPerChunk": 1
+  },
+  "grouping": {
+    "minWords": 1,
+    "maxWords": 3,
+    "maxCharsPerLine": 14,
+    "maxLines": 2,
+    "pauseSplitMs": 300,
+    "minChunkMs": 350,
+    "maxChunkMs": 1600,
+    "holdAfterMs": 150,
+    "maxReadingCps": 26
+  },
+  "placement": {
+    "zone": {
+      "y0": 1180,
+      "y1": 1460
+    },
+    "maxWidthPx": 860,
+    "align": "center"
+  },
+  "animation": {
+    "enter": "pop",
+    "exit": "cut",
+    "durationMs": 140,
+    "intensity": 0.8
+  },
+  "emoji": false,
+  "censor": "none"
+}

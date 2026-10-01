@@ -1,0 +1,48 @@
+{
+  "id": "social-dynamic",
+  "version": "1.0.0",
+  "name": "Social Dynamic",
+  "description": "Speaker-aware reframing, deliberate punch-ins on meaningful beats, reaction shots, bold readable captions.",
+  "output": { "width": 1080, "height": 1920, "fpsPolicy": "source-capped", "maxFps": 60, "crf": 18, "x264Preset": "medium" },
+  "framing": {
+    "cameraFootageMotion": "balanced",
+    "punchIn": { "min": 1.05, "max": 1.15 },
+    "switching": { "minHoldMs": 1200, "hysteresisMs": 400, "deadZoneFrac": 0.06, "maxVelocityFracPerSec": 0.35, "smoothingMs": 300, "resetAtSceneCuts": true, "minLinkConfidence": 0.6 },
+    "headroomFrac": 0.1,
+    "eyeLineFrac": 0.38,
+    "layoutsAllowed": ["full-crop", "speaker-split", "dual-stack", "screen-face", "fit-background"],
+    "defaultLayout": "full-crop",
+    "rapidAlternationPolicy": "stack",
+    "lowConfidenceFallback": "fit-background"
+  },
+  "pacing": { "preRollMs": 80, "postRollMs": 180, "silenceCompress": { "aboveMs": 700, "toMs": 280 }, "jCut": { "enabled": false, "leadMs": 0 }, "tailFadeMaxMs": 120, "maxQuietJoinMs": 350, "keepReactionTails": true },
+  "captions": {
+    "defaultStyleId": "bold-pop",
+    "allowedStyleIds": ["clean", "word-highlight", "bold-pop", "editorial", "playful", "luxury-tech"],
+    "zones": { "full-crop": { "y0": 1180, "y1": 1460 }, "fit-background": { "y0": 1250, "y1": 1500 }, "speaker-split": { "y0": 880, "y1": 1040 }, "dual-stack": { "y0": 880, "y1": 1040 }, "screen-face": { "y0": 1180, "y1": 1400 } },
+    "startAfterFirstFrame": false
+  },
+  "audio": {
+    "sourceAudioPolicy": "keep-source-mix",
+    "voiceChain": { "highpassHz": 70, "denoise": "light", "deess": false, "compress": true },
+    "voiceTargetLufs": -14,
+    "music": { "mode": "none", "targetLufs": null, "ducking": true, "fadeOutMs": 800, "declickMs": 5 },
+    "sfx": { "enabled": false, "maxWhooshPerRun": 1, "maxWhooshTotal": 2, "relPeakDb": { "click": -12, "pop": -12, "chime": -12, "whoosh": -10, "tick": -18 } },
+    "riser": null,
+    "masterTargetLufs": -14,
+    "maxTruePeakDbtp": -1,
+    "toleranceLu": 0.5
+  },
+  "graphics": { "enabled": false, "worldCamera": false, "motionBlur": { "enabled": false, "samplesPerFrame": 1, "shutter": 0, "maxSigmaPx": 0 }, "tokens": {} },
+  "scoring": {
+    "weights": { "hook": 20, "payoff": 20, "standalone": 20, "emotion": 15, "delivery": 15, "fit": 10 },
+    "penalties": { "missing-setup": 12, "unresolved-reference": 10, "weak-delivery": 8, "misleading-truncation": 15, "poor-audio": 10, "duplicate": 20, "unusable-crop": 12 }
+  },
+  "selection": { "maxIou": 0.15, "minGapSec": 4, "durationBand": { "minSec": 30, "maxSec": 60 } },
+  "takes": { "policy": "none", "allowEarlierOnDefect": false },
+  "cover": { "enabled": true, "style": "bold-title" },
+  "rules": [
+    { "id": "sd-punchin-meaningful", "area": "framing", "rule": "Punch-ins only on a meaningful spoken beat or visible reaction, never on a timer", "hard": true, "source": "preset" },
+    { "id": "sd-switch-verified", "area": "framing", "rule": "Switch speaker framing only at a verified turn with link confidence >= minLinkConfidence", "hard": true, "source": "preset" }
+  ]
+}

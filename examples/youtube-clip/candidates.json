@@ -1,0 +1,903 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "src-c40cc113",
+  "createdAt": "2026-10-01T09:44:27.023Z",
+  "requested": {
+    "count": 4,
+    "minSec": 20,
+    "maxSec": 60
+  },
+  "weights": {
+    "hook": 20,
+    "payoff": 20,
+    "standalone": 20,
+    "emotion": 15,
+    "delivery": 15,
+    "fit": 10
+  },
+  "candidates": [
+    {
+      "id": "c-001",
+      "sourceId": "src-c40cc113",
+      "kind": "emotional-story",
+      "start": 140181552000,
+      "end": 166436928000,
+      "tentativeDurationFlicks": 26255376000,
+      "title": "What was it like the first time you made",
+      "hook": "What was it like the first time you made it to space?",
+      "whyItHolds": "opens with a question; surprising opener (first); ends on a complete sentence; question set up and answered inside the clip; emotional language (incredible, beautiful, amazing).",
+      "setup": {
+        "start": 140181552000,
+        "end": 141642144000,
+        "text": "What was it like the first time you made it to space?"
+      },
+      "beat": {
+        "start": 150984288000,
+        "end": 159712560000,
+        "text": "It was bright and absolutely beautiful blue and I completely exclaimed,\"We were in the middle of configuring our spacecraft for, you know, the future, rendezvous burns, but I couldn't concentrate on …"
+      },
+      "payoff": {
+        "start": 162316224000,
+        "end": 166436928000,
+        "text": "So that's my first memory that really stands out where I knew, yes, I am really in space."
+      },
+      "evidence": [
+        {
+          "kind": "transcript",
+          "t": 140181552000,
+          "end": 141642144000,
+          "detail": "opens: \"What was it like the first time you made it to space?\""
+        },
+        {
+          "kind": "transcript",
+          "t": 162316224000,
+          "end": 166436928000,
+          "detail": "ends: \"So that's my first memory that really stands out where I knew, yes, I am really in space.\""
+        },
+        {
+          "kind": "visual-cv",
+          "t": 140181552000,
+          "end": 166436928000,
+          "detail": "faces in 99% of sampled frames (max 3 at once); 0 scene cut(s) inside"
+        }
+      ],
+      "optionalTrims": [
+        {
+          "start": 142347744000,
+          "end": 144648000000,
+          "reason": "3.3 s pause"
+        },
+        {
+          "start": 158132016000,
+          "end": 162118656000,
+          "reason": "5.7 s pause"
+        }
+      ],
+      "reasonsNotToUse": [],
+      "suggestions": {
+        "framing": "two people visible — speaker switching or dual-stack",
+        "captionStyleId": "clean",
+        "intensity": "restrained",
+        "coverTimeFlicks": 143942400000
+      },
+      "scores": {
+        "criteria": {
+          "hook": 0.8999999999999999,
+          "payoff": 0.7500000000000001,
+          "standalone": 1,
+          "emotion": 0.5800000000000001,
+          "delivery": 0.5369565217391303,
+          "fit": 0.93025
+        },
+        "weights": {
+          "hook": 20,
+          "payoff": 20,
+          "standalone": 20,
+          "emotion": 15,
+          "delivery": 15,
+          "fit": 10
+        },
+        "penalties": [],
+        "total": 79.1,
+        "reasons": [
+          "kind emotional-story: first-person story with emotional language",
+          "opens with a question",
+          "surprising opener (first)",
+          "direct address",
+          "short punchy first sentence",
+          "ends on a complete sentence",
+          "question set up and answered inside the clip",
+          "understandable without earlier context",
+          "emotional language (incredible, beautiful, amazing)",
+          "novelty/surprise words (first, incredible, most)",
+          "3.1 words/s",
+          "2 long pause(s)",
+          "37.2 s (band 20–60 s)"
+        ]
+      },
+      "confidence": {
+        "transcript": 0.89,
+        "speakerMapping": 0.8,
+        "visual": 0.5,
+        "editorial": 0.95
+      },
+      "analysisLevel": "audiovisual-cv",
+      "preview": null,
+      "selection": {
+        "state": "proposed"
+      }
+    },
+    {
+      "id": "c-002",
+      "sourceId": "src-c40cc113",
+      "kind": "setup-payoff",
+      "start": 616306320000,
+      "end": 643845888000,
+      "tentativeDurationFlicks": 27539568000,
+      "title": "Is there a time in your career where you",
+      "hook": "Is there a time in your career where you felt like you had failed or misstepped and how did you move through that?",
+      "whyItHolds": "opens with a question; direct address; ends on a complete sentence; conclusion marker \"in the end\"; novelty/surprise words (actually, first, only).",
+      "setup": {
+        "start": 616306320000,
+        "end": 620850384000,
+        "text": "Is there a time in your career where you felt like you had failed or misstepped and how did you move through that?"
+      },
+      "beat": {
+        "start": 630559440000,
+        "end": 635456304000,
+        "text": "When I was first realistically competitive, I started applying, and I did get an interview the second time I applied."
+      },
+      "payoff": {
+        "start": 637276752000,
+        "end": 643845888000,
+        "text": "and everything went really well, but in the end, I got the phone call that said, you know, you did a great job, we encourage you to apply again, but we're only selecting nine people and you're not on…"
+      },
+      "evidence": [
+        {
+          "kind": "transcript",
+          "t": 616306320000,
+          "end": 620850384000,
+          "detail": "opens: \"Is there a time in your career where you felt like you had failed or misstepped and how did you move through that?\""
+        },
+        {
+          "kind": "transcript",
+          "t": 637276752000,
+          "end": 643845888000,
+          "detail": "ends: \"and everything went really well, but in the end, I got the phone call that said, you know, you did a great job, we encourage you to apply a…\""
+        },
+        {
+          "kind": "audio",
+          "t": 625514400000,
+          "detail": "energy peak: -22.5 dBFS (200 ms mean)"
+        },
+        {
+          "kind": "audio",
+          "t": 626156496000,
+          "detail": "energy peak: -22.4 dBFS (200 ms mean)"
+        },
+        {
+          "kind": "audio",
+          "t": 627370128000,
+          "detail": "energy peak: -24.0 dBFS (200 ms mean)"
+        },
+        {
+          "kind": "visual-cv",
+          "t": 616306320000,
+          "end": 643845888000,
+          "detail": "faces in 100% of sampled frames (max 2 at once); 0 scene cut(s) inside"
+        }
+      ],
+      "optionalTrims": [
+        {
+          "start": 620850384000,
+          "end": 623729232000,
+          "reason": "4.1 s pause"
+        }
+      ],
+      "reasonsNotToUse": [],
+      "suggestions": {
+        "framing": "two people visible — speaker switching or dual-stack",
+        "captionStyleId": "clean",
+        "intensity": "restrained",
+        "coverTimeFlicks": 617164800000
+      },
+      "scores": {
+        "criteria": {
+          "hook": 0.6799999999999999,
+          "payoff": 0.9500000000000001,
+          "standalone": 1,
+          "emotion": 0.32,
+          "delivery": 0.7409448818897638,
+          "fit": 0.97575
+        },
+        "weights": {
+          "hook": 20,
+          "payoff": 20,
+          "standalone": 20,
+          "emotion": 15,
+          "delivery": 15,
+          "fit": 10
+        },
+        "penalties": [],
+        "total": 78.3,
+        "reasons": [
+          "kind setup-payoff: question answered within the clip",
+          "opens with a question",
+          "direct address",
+          "ends on a complete sentence",
+          "conclusion marker \"in the end\"",
+          "question set up and answered inside the clip",
+          "understandable without earlier context",
+          "novelty/surprise words (actually, first, only)",
+          "3.3 words/s",
+          "1 long pause(s)",
+          "15 energy peak(s)",
+          "39.0 s (band 20–60 s)"
+        ]
+      },
+      "confidence": {
+        "transcript": 0.93,
+        "speakerMapping": 0.8,
+        "visual": 0.5,
+        "editorial": 0.94
+      },
+      "analysisLevel": "audiovisual-cv",
+      "preview": null,
+      "selection": {
+        "state": "proposed"
+      }
+    },
+    {
+      "id": "c-003",
+      "sourceId": "src-c40cc113",
+      "kind": "demonstration",
+      "start": 298821600000,
+      "end": 323369424000,
+      "tentativeDurationFlicks": 24547824000,
+      "title": "Is it true that you do actually age less",
+      "hook": "But is it true that you do actually age less in space because there's no gravity?",
+      "whyItHolds": "opens with a question; surprising opener (actually); ends on a complete sentence; conclusion marker \"and that's\"; novelty/surprise words (actually).",
+      "setup": {
+        "start": 298779264000,
+        "end": 301735728000,
+        "text": "But is it true that you do actually age less in space because there's no gravity?"
+      },
+      "beat": {
+        "start": 303471504000,
+        "end": 320363568000,
+        "text": "well it depends on how you look at it we wish that were the case and I think cosmetically maybe we look a little bit younger if we have I think fewer wrinkles sometimes because we have this upward sh…"
+      },
+      "payoff": {
+        "start": 320638752000,
+        "end": 323369424000,
+        "text": "Our arteries, for example, do age faster up here than they do on Earth."
+      },
+      "evidence": [
+        {
+          "kind": "transcript",
+          "t": 298779264000,
+          "end": 301735728000,
+          "detail": "opens: \"But is it true that you do actually age less in space because there's no gravity?\""
+        },
+        {
+          "kind": "transcript",
+          "t": 320638752000,
+          "end": 323369424000,
+          "detail": "ends: \"Our arteries, for example, do age faster up here than they do on Earth.\""
+        },
+        {
+          "kind": "audio",
+          "t": 304402896000,
+          "detail": "energy peak: -24.6 dBFS (200 ms mean)"
+        },
+        {
+          "kind": "visual-cv",
+          "t": 298779264000,
+          "end": 323369424000,
+          "detail": "faces in 99% of sampled frames (max 2 at once); 0 scene cut(s) inside"
+        }
+      ],
+      "optionalTrims": [
+        {
+          "start": 298779264000,
+          "end": 298821600000,
+          "reason": "dropped leading \"But\""
+        },
+        {
+          "start": 301735728000,
+          "end": 303471504000,
+          "reason": "2.5 s pause"
+        }
+      ],
+      "reasonsNotToUse": [],
+      "suggestions": {
+        "framing": "two people visible — speaker switching or dual-stack",
+        "captionStyleId": "clean",
+        "intensity": "restrained",
+        "coverTimeFlicks": 308582400000
+      },
+      "scores": {
+        "criteria": {
+          "hook": 0.7999999999999999,
+          "payoff": 0.9500000000000001,
+          "standalone": 1,
+          "emotion": 0.28,
+          "delivery": 0.6464285714285715,
+          "fit": 0.8712500000000001
+        },
+        "weights": {
+          "hook": 20,
+          "payoff": 20,
+          "standalone": 20,
+          "emotion": 15,
+          "delivery": 15,
+          "fit": 10
+        },
+        "penalties": [],
+        "total": 77.6,
+        "reasons": [
+          "kind demonstration: demonstration language/screen",
+          "opens with a question",
+          "surprising opener (actually)",
+          "direct address",
+          "ends on a complete sentence",
+          "conclusion marker \"and that's\"",
+          "question set up and answered inside the clip",
+          "understandable without earlier context",
+          "novelty/surprise words (actually)",
+          "3.2 words/s",
+          "1 long pause(s)",
+          "1 energy peak(s)",
+          "34.9 s (band 20–60 s)"
+        ]
+      },
+      "confidence": {
+        "transcript": 0.92,
+        "speakerMapping": 0.8,
+        "visual": 0.5,
+        "editorial": 0.94
+      },
+      "analysisLevel": "audiovisual-cv",
+      "preview": null,
+      "selection": {
+        "state": "proposed"
+      }
+    },
+    {
+      "id": "c-004",
+      "sourceId": "src-c40cc113",
+      "kind": "setup-payoff",
+      "start": 770973840000,
+      "end": 794449152000,
+      "tentativeDurationFlicks": 23475312000,
+      "title": "Is there such a thing as work-life balance when",
+      "hook": "Is there such a thing as work-life balance when you are working in space and what does that look like?",
+      "whyItHolds": "opens with a question; direct address; ends on a complete sentence; conclusion marker \"and that's\"; novelty/surprise words (only).",
+      "setup": {
+        "start": 770973840000,
+        "end": 774276048000,
+        "text": "Is there such a thing as work-life balance when you are working in space and what does that look like?"
+      },
+      "beat": {
+        "start": 779688000000,
+        "end": 790787088000,
+        "text": "We like to joke that the only difference between the space station during work and during our off time is whether or not the cameras are on, meaning whether or not Mission Control is watching us do o…"
+      },
+      "payoff": {
+        "start": 790935264000,
+        "end": 794449152000,
+        "text": "But the physical space is the same, and so having that work-life balance is even more important here."
+      },
+      "evidence": [
+        {
+          "kind": "transcript",
+          "t": 770973840000,
+          "end": 774276048000,
+          "detail": "opens: \"Is there such a thing as work-life balance when you are working in space and what does that look like?\""
+        },
+        {
+          "kind": "transcript",
+          "t": 790935264000,
+          "end": 794449152000,
+          "detail": "ends: \"But the physical space is the same, and so having that work-life balance is even more important here.\""
+        },
+        {
+          "kind": "audio",
+          "t": 777253680000,
+          "detail": "energy peak: -23.6 dBFS (200 ms mean)"
+        },
+        {
+          "kind": "audio",
+          "t": 778234464000,
+          "detail": "energy peak: -24.5 dBFS (200 ms mean)"
+        },
+        {
+          "kind": "audio",
+          "t": 782002368000,
+          "detail": "energy peak: -23.9 dBFS (200 ms mean)"
+        },
+        {
+          "kind": "visual-cv",
+          "t": 770973840000,
+          "end": 794449152000,
+          "detail": "faces in 100% of sampled frames (max 2 at once); 0 scene cut(s) inside"
+        }
+      ],
+      "optionalTrims": [
+        {
+          "start": 774276048000,
+          "end": 776378736000,
+          "reason": "3.0 s pause"
+        }
+      ],
+      "reasonsNotToUse": [],
+      "suggestions": {
+        "framing": "two people visible — speaker switching or dual-stack",
+        "captionStyleId": "clean",
+        "intensity": "restrained",
+        "coverTimeFlicks": 776160000000
+      },
+      "scores": {
+        "criteria": {
+          "hook": 0.6799999999999999,
+          "payoff": 0.9500000000000001,
+          "standalone": 1,
+          "emotion": 0.24000000000000002,
+          "delivery": 0.7634146341463415,
+          "fit": 0.8317500000000001
+        },
+        "weights": {
+          "hook": 20,
+          "payoff": 20,
+          "standalone": 20,
+          "emotion": 15,
+          "delivery": 15,
+          "fit": 10
+        },
+        "penalties": [],
+        "total": 76,
+        "reasons": [
+          "kind setup-payoff: question answered within the clip",
+          "opens with a question",
+          "direct address",
+          "ends on a complete sentence",
+          "conclusion marker \"and that's\"",
+          "question set up and answered inside the clip",
+          "understandable without earlier context",
+          "novelty/surprise words (only)",
+          "3.7 words/s",
+          "1 long pause(s)",
+          "10 energy peak(s)",
+          "33.3 s (band 20–60 s)"
+        ]
+      },
+      "confidence": {
+        "transcript": 0.95,
+        "speakerMapping": 0.8,
+        "visual": 0.5,
+        "editorial": 0.93
+      },
+      "analysisLevel": "audiovisual-cv",
+      "preview": null,
+      "selection": {
+        "state": "proposed"
+      }
+    },
+    {
+      "id": "x-001",
+      "sourceId": "src-c40cc113",
+      "kind": "funny-exchange",
+      "start": 99538992000,
+      "end": 121941792000,
+      "tentativeDurationFlicks": 22402800000,
+      "title": "Technically they're aliens",
+      "hook": "but technically they're aliens.",
+      "whyItHolds": "short punchy first sentence; ends on a complete sentence; question set up and answered inside the clip; visible reaction noted on inspection (1).",
+      "setup": {
+        "start": 99517824000,
+        "end": 100583280000,
+        "text": "but technically they're aliens."
+      },
+      "beat": {
+        "start": 106524432000,
+        "end": 112945392000,
+        "text": "can they hear me right now hello and welcome to we can hear you loud and clear welcome on board the international space station"
+      },
+      "payoff": {
+        "start": 119733264000,
+        "end": 121941792000,
+        "text": "Station, this is Kelly Clarkson with The Kelly Clarkson Show."
+      },
+      "evidence": [
+        {
+          "kind": "transcript",
+          "t": 99517824000,
+          "end": 100583280000,
+          "detail": "opens: \"but technically they're aliens.\""
+        },
+        {
+          "kind": "transcript",
+          "t": 119733264000,
+          "end": 121941792000,
+          "detail": "ends: \"Station, this is Kelly Clarkson with The Kelly Clarkson Show.\""
+        },
+        {
+          "kind": "visual-cv",
+          "t": 99517824000,
+          "end": 121941792000,
+          "detail": "faces in 100% of sampled frames (max 2 at once); 0 scene cut(s) inside"
+        },
+        {
+          "kind": "visual-agent",
+          "t": 103229280000,
+          "detail": "laughter: Astronaut on the right laughs while holding the microphone; astronaut on the left smiles"
+        }
+      ],
+      "optionalTrims": [
+        {
+          "start": 99517824000,
+          "end": 99538992000,
+          "reason": "dropped leading \"but\""
+        },
+        {
+          "start": 102234384000,
+          "end": 104033664000,
+          "reason": "2.5 s pause"
+        },
+        {
+          "start": 104845104000,
+          "end": 106524432000,
+          "reason": "2.4 s pause"
+        },
+        {
+          "start": 112945392000,
+          "end": 116318160000,
+          "reason": "4.8 s pause"
+        },
+        {
+          "start": 117545904000,
+          "end": 119733264000,
+          "reason": "3.1 s pause"
+        }
+      ],
+      "reasonsNotToUse": [
+        "weak-delivery: 1.6 words/s, 13% low-confidence words, 4 long pause(s)",
+        "below the quality bar (49.9 < 50)"
+      ],
+      "suggestions": {
+        "framing": "two people visible — speaker switching or dual-stack",
+        "captionStyleId": "clean",
+        "intensity": "restrained",
+        "coverTimeFlicks": 104193600000
+      },
+      "scores": {
+        "criteria": {
+          "hook": 0.44999999999999996,
+          "payoff": 0.7500000000000001,
+          "standalone": 1,
+          "emotion": 0.4,
+          "delivery": 0,
+          "fit": 0.7945
+        },
+        "weights": {
+          "hook": 20,
+          "payoff": 20,
+          "standalone": 20,
+          "emotion": 15,
+          "delivery": 15,
+          "fit": 10
+        },
+        "penalties": [
+          {
+            "kind": "weak-delivery",
+            "points": 8,
+            "reason": "1.6 words/s, 13% low-confidence words, 4 long pause(s)"
+          }
+        ],
+        "total": 49.9,
+        "reasons": [
+          "kind funny-exchange: laughter in the transcript or seen on inspection",
+          "short punchy first sentence",
+          "ends on a complete sentence",
+          "question set up and answered inside the clip",
+          "understandable without earlier context",
+          "visible reaction noted on inspection (1)",
+          "1.6 words/s",
+          "13% low-confidence words",
+          "4 long pause(s)",
+          "31.8 s (band 20–60 s)"
+        ]
+      },
+      "confidence": {
+        "transcript": 0.77,
+        "speakerMapping": 0.8,
+        "visual": 0.8,
+        "editorial": 0.5
+      },
+      "analysisLevel": "audiovisual-agent",
+      "preview": null,
+      "selection": {
+        "state": "rejected",
+        "reason": "below quality bar"
+      }
+    },
+    {
+      "id": "x-002",
+      "sourceId": "src-c40cc113",
+      "kind": "funny-exchange",
+      "start": 92278368000,
+      "end": 130860576000,
+      "tentativeDurationFlicks": 38582208000,
+      "title": "Please call station for a voice check",
+      "hook": "Please call station for a voice check.",
+      "whyItHolds": "short punchy first sentence; ends on a complete sentence; question set up and answered inside the clip; exclamation.",
+      "setup": {
+        "start": 92278368000,
+        "end": 93259152000,
+        "text": "Please call station for a voice check."
+      },
+      "beat": {
+        "start": 106524432000,
+        "end": 112945392000,
+        "text": "can they hear me right now hello and welcome to we can hear you loud and clear welcome on board the international space station"
+      },
+      "payoff": {
+        "start": 130267872000,
+        "end": 130860576000,
+        "text": "Oh, my gosh."
+      },
+      "evidence": [
+        {
+          "kind": "transcript",
+          "t": 92278368000,
+          "end": 93259152000,
+          "detail": "opens: \"Please call station for a voice check.\""
+        },
+        {
+          "kind": "transcript",
+          "t": 130267872000,
+          "end": 130860576000,
+          "detail": "ends: \"Oh, my gosh.\""
+        },
+        {
+          "kind": "visual-cv",
+          "t": 92278368000,
+          "end": 130860576000,
+          "detail": "faces in 100% of sampled frames (max 2 at once); 0 scene cut(s) inside"
+        },
+        {
+          "kind": "visual-agent",
+          "t": 103229280000,
+          "detail": "laughter: Astronaut on the right laughs while holding the microphone; astronaut on the left smiles"
+        }
+      ],
+      "optionalTrims": [
+        {
+          "start": 93259152000,
+          "end": 96483744000,
+          "reason": "4.6 s pause"
+        },
+        {
+          "start": 97817328000,
+          "end": 99517824000,
+          "reason": "2.4 s pause"
+        },
+        {
+          "start": 102234384000,
+          "end": 104033664000,
+          "reason": "2.5 s pause"
+        },
+        {
+          "start": 104845104000,
+          "end": 106524432000,
+          "reason": "2.4 s pause"
+        },
+        {
+          "start": 112945392000,
+          "end": 116318160000,
+          "reason": "4.8 s pause"
+        },
+        {
+          "start": 117545904000,
+          "end": 119733264000,
+          "reason": "3.1 s pause"
+        },
+        {
+          "start": 122449824000,
+          "end": 124848864000,
+          "reason": "3.4 s pause"
+        },
+        {
+          "start": 127360800000,
+          "end": 130267872000,
+          "reason": "4.1 s pause"
+        }
+      ],
+      "reasonsNotToUse": [
+        "weak-delivery: 1.6 words/s, 11% low-confidence words, 8 long pause(s)",
+        "below the quality bar (49.8 < 50)"
+      ],
+      "suggestions": {
+        "framing": "two people visible — speaker switching or dual-stack",
+        "captionStyleId": "clean",
+        "intensity": "restrained",
+        "coverTimeFlicks": 104193600000
+      },
+      "scores": {
+        "criteria": {
+          "hook": 0.44999999999999996,
+          "payoff": 0.7500000000000001,
+          "standalone": 1,
+          "emotion": 0.5,
+          "delivery": 0,
+          "fit": 0.633
+        },
+        "weights": {
+          "hook": 20,
+          "payoff": 20,
+          "standalone": 20,
+          "emotion": 15,
+          "delivery": 15,
+          "fit": 10
+        },
+        "penalties": [
+          {
+            "kind": "weak-delivery",
+            "points": 8,
+            "reason": "1.6 words/s, 11% low-confidence words, 8 long pause(s)"
+          }
+        ],
+        "total": 49.8,
+        "reasons": [
+          "kind funny-exchange: laughter in the transcript or seen on inspection",
+          "short punchy first sentence",
+          "ends on a complete sentence",
+          "question set up and answered inside the clip",
+          "understandable without earlier context",
+          "exclamation",
+          "visible reaction noted on inspection (1)",
+          "1.6 words/s",
+          "11% low-confidence words",
+          "8 long pause(s)",
+          "54.7 s (band 20–60 s)"
+        ]
+      },
+      "confidence": {
+        "transcript": 0.82,
+        "speakerMapping": 0.8,
+        "visual": 0.8,
+        "editorial": 0.5
+      },
+      "analysisLevel": "audiovisual-agent",
+      "preview": null,
+      "selection": {
+        "state": "rejected",
+        "reason": "below quality bar"
+      }
+    },
+    {
+      "id": "x-003",
+      "sourceId": "src-c40cc113",
+      "kind": "setup-payoff",
+      "start": 106524432000,
+      "end": 127360800000,
+      "tentativeDurationFlicks": 20836368000,
+      "title": "Can they hear me right now hello and welcome",
+      "hook": "can they hear me right now hello and welcome to we can hear you loud and clear welcome on board the international space station",
+      "whyItHolds": "direct address; ends on a complete sentence; question set up and answered inside the clip.",
+      "setup": {
+        "start": 106524432000,
+        "end": 112945392000,
+        "text": "can they hear me right now hello and welcome to we can hear you loud and clear welcome on board the international space station"
+      },
+      "beat": {
+        "start": 121941792000,
+        "end": 122449824000,
+        "text": "How do you hear me?"
+      },
+      "payoff": {
+        "start": 126803376000,
+        "end": 127360800000,
+        "text": "Welcome on board."
+      },
+      "evidence": [
+        {
+          "kind": "transcript",
+          "t": 106524432000,
+          "end": 112945392000,
+          "detail": "opens: \"can they hear me right now hello and welcome to we can hear you loud and clear welcome on board the international space station\""
+        },
+        {
+          "kind": "transcript",
+          "t": 126803376000,
+          "end": 127360800000,
+          "detail": "ends: \"Welcome on board.\""
+        },
+        {
+          "kind": "visual-cv",
+          "t": 106524432000,
+          "end": 127360800000,
+          "detail": "faces in 100% of sampled frames (max 2 at once); 0 scene cut(s) inside"
+        }
+      ],
+      "optionalTrims": [
+        {
+          "start": 112945392000,
+          "end": 116318160000,
+          "reason": "4.8 s pause"
+        },
+        {
+          "start": 117545904000,
+          "end": 119733264000,
+          "reason": "3.1 s pause"
+        },
+        {
+          "start": 122449824000,
+          "end": 124848864000,
+          "reason": "3.4 s pause"
+        }
+      ],
+      "reasonsNotToUse": [
+        "weak-delivery: 1.8 words/s, 13% low-confidence words, 3 long pause(s)",
+        "below the quality bar (49.8 < 50)"
+      ],
+      "suggestions": {
+        "framing": "two people visible — speaker switching or dual-stack",
+        "captionStyleId": "clean",
+        "intensity": "restrained",
+        "coverTimeFlicks": 106780800000
+      },
+      "scores": {
+        "criteria": {
+          "hook": 0.43,
+          "payoff": 0.7500000000000001,
+          "standalone": 1,
+          "emotion": 0.2,
+          "delivery": 0.2555555555555556,
+          "fit": 0.7382500000000001
+        },
+        "weights": {
+          "hook": 20,
+          "payoff": 20,
+          "standalone": 20,
+          "emotion": 15,
+          "delivery": 15,
+          "fit": 10
+        },
+        "penalties": [
+          {
+            "kind": "weak-delivery",
+            "points": 8,
+            "reason": "1.8 words/s, 13% low-confidence words, 3 long pause(s)"
+          }
+        ],
+        "total": 49.8,
+        "reasons": [
+          "kind setup-payoff: question answered within the clip",
+          "direct address",
+          "ends on a complete sentence",
+          "question set up and answered inside the clip",
+          "understandable without earlier context",
+          "1.8 words/s",
+          "13% low-confidence words",
+          "3 long pause(s)",
+          "29.5 s (band 20–60 s)"
+        ]
+      },
+      "confidence": {
+        "transcript": 0.81,
+        "speakerMapping": 0.8,
+        "visual": 0.5,
+        "editorial": 0.5
+      },
+      "analysisLevel": "audiovisual-cv",
+      "preview": null,
+      "selection": {
+        "state": "rejected",
+        "reason": "below quality bar"
+      }
+    }
+  ],
+  "shortfall": null,
+  "method": "sentence-bounded windows scored with the clean-podcast editorial rubric (hook/payoff/standalone/emotion/delivery/fit − explicit penalties); greedy diverse selection (IoU ≤ 0.15, gap ≥ 4 s). Editorial potential, not a virality prediction. Visual evidence: agent-inspected."
+}

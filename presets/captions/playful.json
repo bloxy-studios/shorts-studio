@@ -1,0 +1,74 @@
+{
+  "id": "playful",
+  "version": "1.0.0",
+  "name": "Playful",
+  "description": "Rounded Fredoka with a bouncy entrance and selective pink shape emphasis \u2014 suited to comedy and reactions, used sparingly.",
+  "fonts": [
+    {
+      "family": "Fredoka",
+      "file": "Fredoka-Variable.ttf",
+      "weight": 700,
+      "style": "normal"
+    }
+  ],
+  "base": {
+    "family": "Fredoka",
+    "weight": 700,
+    "sizePx": 76,
+    "color": "#FFFFFF",
+    "stroke": {
+      "color": "#1B1030",
+      "widthPx": 9
+    },
+    "shadow": "0 5px 0 rgba(27,16,48,0.55)",
+    "box": null,
+    "lineHeight": 1.08,
+    "letterSpacingEm": 0.005,
+    "case": "as-spoken"
+  },
+  "emphasis": {
+    "mode": "semantic",
+    "treatment": {
+      "color": "#FFFFFF",
+      "stroke": {
+        "color": "#1B1030",
+        "widthPx": 0
+      },
+      "box": {
+        "color": "#FF4FA3",
+        "radiusPx": 22,
+        "padX": 14,
+        "padY": 2
+      },
+      "scale": 1.05
+    },
+    "maxWordsPerChunk": 1
+  },
+  "grouping": {
+    "minWords": 1,
+    "maxWords": 4,
+    "maxCharsPerLine": 18,
+    "maxLines": 2,
+    "pauseSplitMs": 320,
+    "minChunkMs": 400,
+    "maxChunkMs": 2200,
+    "holdAfterMs": 200,
+    "maxReadingCps": 24
+  },
+  "placement": {
+    "zone": {
+      "y0": 1180,
+      "y1": 1460
+    },
+    "maxWidthPx": 860,
+    "align": "center"
+  },
+  "animation": {
+    "enter": "pop",
+    "exit": "cut",
+    "durationMs": 180,
+    "intensity": 0.7
+  },
+  "emoji": false,
+  "censor": "none"
+}

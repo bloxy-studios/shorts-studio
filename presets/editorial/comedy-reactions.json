@@ -1,0 +1,48 @@
+{
+  "id": "comedy-reactions",
+  "version": "1.0.0",
+  "name": "Comedy / Reactions",
+  "description": "Preserves comic timing, reaction beats and punchlines; effects used sparingly and only on real beats.",
+  "output": { "width": 1080, "height": 1920, "fpsPolicy": "source-capped", "maxFps": 60, "crf": 18, "x264Preset": "medium" },
+  "framing": {
+    "cameraFootageMotion": "balanced",
+    "punchIn": { "min": 1.05, "max": 1.12 },
+    "switching": { "minHoldMs": 900, "hysteresisMs": 300, "deadZoneFrac": 0.06, "maxVelocityFracPerSec": 0.4, "smoothingMs": 250, "resetAtSceneCuts": true, "minLinkConfidence": 0.6 },
+    "headroomFrac": 0.1,
+    "eyeLineFrac": 0.38,
+    "layoutsAllowed": ["full-crop", "speaker-split", "dual-stack", "fit-background"],
+    "defaultLayout": "full-crop",
+    "rapidAlternationPolicy": "stack",
+    "lowConfidenceFallback": "fit-background"
+  },
+  "pacing": { "preRollMs": 100, "postRollMs": 600, "silenceCompress": null, "jCut": { "enabled": false, "leadMs": 0 }, "tailFadeMaxMs": 200, "maxQuietJoinMs": 800, "keepReactionTails": true },
+  "captions": {
+    "defaultStyleId": "playful",
+    "allowedStyleIds": ["playful", "bold-pop", "word-highlight", "clean", "editorial", "luxury-tech"],
+    "zones": { "full-crop": { "y0": 1180, "y1": 1460 }, "speaker-split": { "y0": 880, "y1": 1040 }, "dual-stack": { "y0": 880, "y1": 1040 }, "fit-background": { "y0": 1250, "y1": 1500 } },
+    "startAfterFirstFrame": false
+  },
+  "audio": {
+    "sourceAudioPolicy": "keep-source-mix",
+    "voiceChain": { "highpassHz": 60, "denoise": "off", "deess": false, "compress": false },
+    "voiceTargetLufs": -14,
+    "music": { "mode": "none", "targetLufs": null, "ducking": true, "fadeOutMs": 800, "declickMs": 5 },
+    "sfx": { "enabled": false, "maxWhooshPerRun": 0, "maxWhooshTotal": 0, "relPeakDb": { "pop": -12 } },
+    "riser": null,
+    "masterTargetLufs": -14,
+    "maxTruePeakDbtp": -1,
+    "toleranceLu": 0.5
+  },
+  "graphics": { "enabled": false, "worldCamera": false, "motionBlur": { "enabled": false, "samplesPerFrame": 1, "shutter": 0, "maxSigmaPx": 0 }, "tokens": {} },
+  "scoring": {
+    "weights": { "hook": 18, "payoff": 22, "standalone": 18, "emotion": 20, "delivery": 14, "fit": 8 },
+    "penalties": { "missing-setup": 15, "unresolved-reference": 10, "weak-delivery": 8, "misleading-truncation": 15, "poor-audio": 10, "duplicate": 20, "unusable-crop": 12 }
+  },
+  "selection": { "maxIou": 0.15, "minGapSec": 3, "durationBand": { "minSec": 15, "maxSec": 45 } },
+  "takes": { "policy": "none", "allowEarlierOnDefect": false },
+  "cover": { "enabled": true, "style": "bold-title" },
+  "rules": [
+    { "id": "cr-keep-laugh", "area": "timing", "rule": "Keep laughter and reaction tails after punchlines; never trim a pause that is part of the timing", "hard": true, "source": "preset" },
+    { "id": "cr-verified-reactions", "area": "framing", "rule": "Reaction shots only at their actual source times", "hard": true, "source": "preset" }
+  ]
+}

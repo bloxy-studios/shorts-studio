@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="{{LANG}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Shorts Studio caption states — {{STYLE_ID}}</title>
+    <!--
+      Caption state sheet. Each state (one caption chunk, or one active word for
+      karaoke styles) is shown for exactly one rendered frame at {{FPS}} fps.
+      The Shorts Studio compositor retimes these frames onto the output timeline
+      from the EditPlan, applying entrance/exit transforms frame-exactly.
+      Generated from templates/hyperframes/caption-states/template.html.
+    -->
+    <script src="assets/gsap.min.js"></script>
+    <style>
+{{FONT_FACES}}
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+      }
+      #root {
+        position: relative;
+        width: {{W}}px;
+        height: {{H}}px;
+        overflow: hidden;
+        background: transparent;
+      }
+      .st {
+        position: absolute;
+        left: 0;
+        width: {{W}}px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+      }
+      #s0 {
+        visibility: visible;
+      }
+      .blk {
+        max-width: {{MAX_W}}px;
+        text-align: {{ALIGN}};
+      }
+      .ln {
+        display: block;
+        white-space: nowrap;
+        transform-origin: 50% 50%;
+      }
+{{STYLE_CSS}}
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="captions" data-start="0" data-width="{{W}}" data-height="{{H}}" data-duration="{{DURATION}}">
+{{STATES}}
+    </div>
+    <script>
+      // Backstop: scale down any line that is still wider than the caption width.
+      (function fit() {
+        var lines = document.querySelectorAll(".ln");
+        for (var i = 0; i < lines.length; i++) {
+          var ln = lines[i];
+          var w = ln.scrollWidth;
+          if (w > {{MAX_W}}) {
+            ln.style.display = "inline-block";
+            ln.style.transform = "scale(" + ({{MAX_W}} / w).toFixed(4) + ")";
+            ln.setAttribute("data-fit", "scaled");
+          }
+        }
+      })();
+      var FPS = {{FPS}};
+      var N = {{COUNT}};
+      var tl = gsap.timeline({ paused: true });
+      for (var i = 0; i < N; i++) {
+        var el = document.getElementById("s" + i);
+        if (i > 0) tl.set(el, { visibility: "visible" }, (i - 0.25) / FPS);
+        tl.set(el, { visibility: "hidden" }, (i + 0.75) / FPS);
+      }
+      window.__timelines["captions"] = tl;
+    </script>
+  </body>
+</html>

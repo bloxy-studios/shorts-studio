@@ -1,0 +1,26 @@
+# dependencies and local runtimes (installed by `ss doctor --setup`)
+node_modules/
+.runtime/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# user workspaces and generated media — never commit footage
+projects/
+.shorts-studio/
+tests/fixtures/generated/
+tests/fixtures/downloaded/
+
+# build output (dist/shorts-studio.js is committed for marketplace installs; see docs/ENGINEERING.md)
+dist/*.map
+
+# OS / editor
+.DS_Store
+*.swp
+
+# packaged plugin + marketplace (bun scripts/package-plugin.ts)
+release/
+
+# the author's private build spec (not published)
+Claude_Code_Shorts_Studio_Plugin_Build_Prompt.md

@@ -1,0 +1,48 @@
+{
+  "id": "clean-podcast",
+  "version": "1.0.0",
+  "name": "Clean Podcast",
+  "description": "Conservative framing, natural pacing, clear speaker changes, restrained captions.",
+  "output": { "width": 1080, "height": 1920, "fpsPolicy": "source-capped", "maxFps": 60, "crf": 18, "x264Preset": "medium" },
+  "framing": {
+    "cameraFootageMotion": "restrained",
+    "punchIn": null,
+    "switching": { "minHoldMs": 2000, "hysteresisMs": 700, "deadZoneFrac": 0.1, "maxVelocityFracPerSec": 0.2, "smoothingMs": 500, "resetAtSceneCuts": true, "minLinkConfidence": 0.7 },
+    "headroomFrac": 0.12,
+    "eyeLineFrac": 0.38,
+    "layoutsAllowed": ["full-crop", "dual-stack", "fit-background", "screen-face"],
+    "defaultLayout": "full-crop",
+    "rapidAlternationPolicy": "stack",
+    "lowConfidenceFallback": "dual-stack"
+  },
+  "pacing": { "preRollMs": 120, "postRollMs": 250, "silenceCompress": null, "jCut": { "enabled": false, "leadMs": 0 }, "tailFadeMaxMs": 150, "maxQuietJoinMs": 600, "keepReactionTails": true },
+  "captions": {
+    "defaultStyleId": "clean",
+    "allowedStyleIds": ["clean", "word-highlight", "editorial", "bold-pop", "playful", "luxury-tech"],
+    "zones": { "full-crop": { "y0": 1200, "y1": 1470 }, "dual-stack": { "y0": 880, "y1": 1040 }, "fit-background": { "y0": 1250, "y1": 1500 }, "screen-face": { "y0": 1180, "y1": 1400 } },
+    "startAfterFirstFrame": false
+  },
+  "audio": {
+    "sourceAudioPolicy": "keep-source-mix",
+    "voiceChain": { "highpassHz": 60, "denoise": "off", "deess": false, "compress": false },
+    "voiceTargetLufs": -14,
+    "music": { "mode": "none", "targetLufs": null, "ducking": true, "fadeOutMs": 800, "declickMs": 5 },
+    "sfx": { "enabled": false, "maxWhooshPerRun": 0, "maxWhooshTotal": 0, "relPeakDb": {} },
+    "riser": null,
+    "masterTargetLufs": -14,
+    "maxTruePeakDbtp": -1,
+    "toleranceLu": 0.5
+  },
+  "graphics": { "enabled": false, "worldCamera": false, "motionBlur": { "enabled": false, "samplesPerFrame": 1, "shutter": 0, "maxSigmaPx": 0 }, "tokens": {} },
+  "scoring": {
+    "weights": { "hook": 20, "payoff": 20, "standalone": 20, "emotion": 15, "delivery": 15, "fit": 10 },
+    "penalties": { "missing-setup": 12, "unresolved-reference": 10, "weak-delivery": 8, "misleading-truncation": 15, "poor-audio": 10, "duplicate": 20, "unusable-crop": 12 }
+  },
+  "selection": { "maxIou": 0.15, "minGapSec": 4, "durationBand": { "minSec": 30, "maxSec": 60 } },
+  "takes": { "policy": "none", "allowEarlierOnDefect": false },
+  "cover": { "enabled": true, "style": "clean-title" },
+  "rules": [
+    { "id": "cp-no-punchin", "area": "framing", "rule": "No punch-ins; framing changes only at verified speaker turns", "hard": false, "source": "preset" },
+    { "id": "cp-overlap-both", "area": "framing", "rule": "During overlapping speech keep both speakers visible", "hard": true, "source": "preset" }
+  ]
+}

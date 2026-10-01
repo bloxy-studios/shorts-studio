@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "shorts-studio",
+  "description": "Shorts Studio \u2014 code-driven short-video editing for Claude Code (clip, creator edit, Luxury Tech, captions, graphics, synthesized audio, measured QA)",
+  "owner": {
+    "name": "bloxy-studios"
+  },
+  "plugins": [
+    {
+      "name": "shorts-studio",
+      "source": "./",
+      "description": "Turn YouTube links or local recordings into polished 9:16 shorts with measured QA",
+      "category": "media",
+      "tags": [
+        "video",
+        "shorts",
+        "editing",
+        "captions"
+      ]
+    }
+  ]
+}

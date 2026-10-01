@@ -1,0 +1,47 @@
+{
+  "id": "educational-screen",
+  "version": "1.0.0",
+  "name": "Educational / Screen",
+  "description": "Prioritizes readable screens and demonstrations, useful callouts, and steady framing.",
+  "output": { "width": 1080, "height": 1920, "fpsPolicy": "source-capped", "maxFps": 60, "crf": 17, "x264Preset": "medium" },
+  "framing": {
+    "cameraFootageMotion": "restrained",
+    "punchIn": null,
+    "switching": { "minHoldMs": 2500, "hysteresisMs": 800, "deadZoneFrac": 0.1, "maxVelocityFracPerSec": 0.2, "smoothingMs": 500, "resetAtSceneCuts": true, "minLinkConfidence": 0.7 },
+    "headroomFrac": 0.12,
+    "eyeLineFrac": 0.38,
+    "layoutsAllowed": ["screen-face", "fit-background", "full-crop", "dual-stack"],
+    "defaultLayout": "screen-face",
+    "rapidAlternationPolicy": "wide",
+    "lowConfidenceFallback": "fit-background"
+  },
+  "pacing": { "preRollMs": 120, "postRollMs": 250, "silenceCompress": { "aboveMs": 900, "toMs": 400 }, "jCut": { "enabled": false, "leadMs": 0 }, "tailFadeMaxMs": 150, "maxQuietJoinMs": 500, "keepReactionTails": false },
+  "captions": {
+    "defaultStyleId": "clean",
+    "allowedStyleIds": ["clean", "editorial", "word-highlight", "bold-pop", "playful", "luxury-tech"],
+    "zones": { "screen-face": { "y0": 1180, "y1": 1400 }, "fit-background": { "y0": 1300, "y1": 1520 }, "full-crop": { "y0": 1200, "y1": 1470 }, "dual-stack": { "y0": 880, "y1": 1040 } },
+    "startAfterFirstFrame": false
+  },
+  "audio": {
+    "sourceAudioPolicy": "keep-source-mix",
+    "voiceChain": { "highpassHz": 70, "denoise": "light", "deess": false, "compress": true },
+    "voiceTargetLufs": -14,
+    "music": { "mode": "none", "targetLufs": null, "ducking": true, "fadeOutMs": 800, "declickMs": 5 },
+    "sfx": { "enabled": false, "maxWhooshPerRun": 0, "maxWhooshTotal": 0, "relPeakDb": { "click": -12 } },
+    "riser": null,
+    "masterTargetLufs": -14,
+    "maxTruePeakDbtp": -1,
+    "toleranceLu": 0.5
+  },
+  "graphics": { "enabled": true, "worldCamera": false, "motionBlur": { "enabled": false, "samplesPerFrame": 1, "shutter": 0, "maxSigmaPx": 0 }, "tokens": {} },
+  "scoring": {
+    "weights": { "hook": 18, "payoff": 24, "standalone": 22, "emotion": 8, "delivery": 13, "fit": 15 },
+    "penalties": { "missing-setup": 15, "unresolved-reference": 12, "weak-delivery": 6, "misleading-truncation": 15, "poor-audio": 10, "duplicate": 20, "unusable-crop": 15 }
+  },
+  "selection": { "maxIou": 0.15, "minGapSec": 5, "durationBand": { "minSec": 30, "maxSec": 90 } },
+  "takes": { "policy": "none", "allowEarlierOnDefect": false },
+  "cover": { "enabled": true, "style": "clean-title" },
+  "rules": [
+    { "id": "es-screen-readable", "area": "layout", "rule": "Never center-crop a screen demonstration; use screen-face or fit-background so UI text stays readable", "hard": true, "source": "preset" }
+  ]
+}

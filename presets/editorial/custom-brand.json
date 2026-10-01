@@ -1,0 +1,45 @@
+{
+  "id": "custom-brand",
+  "version": "0.1.0",
+  "name": "Custom / Brand",
+  "description": "Starting point for user-defined tokens and rules imported from references (style-learning) or previous projects. Copy to the workspace and edit; the plugin copy stays read-only.",
+  "output": { "width": 1080, "height": 1920, "fpsPolicy": "source-capped", "maxFps": 60, "crf": 18, "x264Preset": "medium" },
+  "framing": {
+    "cameraFootageMotion": "restrained",
+    "punchIn": { "min": 1.05, "max": 1.1 },
+    "switching": { "minHoldMs": 1500, "hysteresisMs": 500, "deadZoneFrac": 0.08, "maxVelocityFracPerSec": 0.3, "smoothingMs": 350, "resetAtSceneCuts": true, "minLinkConfidence": 0.65 },
+    "headroomFrac": 0.1,
+    "eyeLineFrac": 0.38,
+    "layoutsAllowed": ["full-crop", "dual-stack", "screen-face", "fit-background", "speaker-split"],
+    "defaultLayout": "full-crop",
+    "rapidAlternationPolicy": "stack",
+    "lowConfidenceFallback": "fit-background"
+  },
+  "pacing": { "preRollMs": 80, "postRollMs": 200, "silenceCompress": { "aboveMs": 700, "toMs": 300 }, "jCut": { "enabled": false, "leadMs": 0 }, "tailFadeMaxMs": 150, "maxQuietJoinMs": 400, "keepReactionTails": true },
+  "captions": {
+    "defaultStyleId": "clean",
+    "allowedStyleIds": ["clean", "word-highlight", "bold-pop", "editorial", "playful", "luxury-tech"],
+    "zones": { "full-crop": { "y0": 1180, "y1": 1460 }, "dual-stack": { "y0": 880, "y1": 1040 }, "screen-face": { "y0": 1180, "y1": 1400 }, "fit-background": { "y0": 1250, "y1": 1500 }, "speaker-split": { "y0": 880, "y1": 1040 } },
+    "startAfterFirstFrame": false
+  },
+  "audio": {
+    "sourceAudioPolicy": "keep-source-mix",
+    "voiceChain": { "highpassHz": 70, "denoise": "light", "deess": false, "compress": true },
+    "voiceTargetLufs": -14,
+    "music": { "mode": "none", "targetLufs": null, "ducking": true, "fadeOutMs": 800, "declickMs": 5 },
+    "sfx": { "enabled": false, "maxWhooshPerRun": 0, "maxWhooshTotal": 0, "relPeakDb": {} },
+    "riser": null,
+    "masterTargetLufs": -14,
+    "maxTruePeakDbtp": -1,
+    "toleranceLu": 0.5
+  },
+  "graphics": { "enabled": false, "worldCamera": false, "motionBlur": { "enabled": false, "samplesPerFrame": 1, "shutter": 0, "maxSigmaPx": 0 }, "tokens": {} },
+  "scoring": {
+    "weights": { "hook": 20, "payoff": 20, "standalone": 20, "emotion": 15, "delivery": 15, "fit": 10 },
+    "penalties": { "missing-setup": 12, "unresolved-reference": 10, "weak-delivery": 8, "misleading-truncation": 15, "poor-audio": 10, "duplicate": 20, "unusable-crop": 12 }
+  },
+  "selection": { "maxIou": 0.15, "minGapSec": 4, "durationBand": { "minSec": 30, "maxSec": 60 } },
+  "takes": { "policy": "none", "allowEarlierOnDefect": false },
+  "cover": { "enabled": true, "style": "clean-title" },
+  "rules": []
+}

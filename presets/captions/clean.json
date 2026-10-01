@@ -1,0 +1,61 @@
+{
+  "id": "clean",
+  "version": "1.0.0",
+  "name": "Clean",
+  "description": "Phrase captions with restrained emphasis and maximum legibility: Inter Bold, soft shadow, no stroke.",
+  "fonts": [
+    {
+      "family": "Inter",
+      "file": "Inter-Variable.ttf",
+      "weight": 700,
+      "style": "normal"
+    }
+  ],
+  "base": {
+    "family": "Inter",
+    "weight": 700,
+    "sizePx": 58,
+    "color": "#FFFFFF",
+    "stroke": null,
+    "shadow": "0 3px 14px rgba(0,0,0,0.65), 0 1px 3px rgba(0,0,0,0.8)",
+    "box": null,
+    "lineHeight": 1.16,
+    "letterSpacingEm": -0.01,
+    "case": "as-spoken"
+  },
+  "emphasis": {
+    "mode": "semantic",
+    "treatment": {
+      "color": "#FFE7A3",
+      "weight": 800
+    },
+    "maxWordsPerChunk": 1
+  },
+  "grouping": {
+    "minWords": 2,
+    "maxWords": 7,
+    "maxCharsPerLine": 26,
+    "maxLines": 2,
+    "pauseSplitMs": 420,
+    "minChunkMs": 600,
+    "maxChunkMs": 3200,
+    "holdAfterMs": 300,
+    "maxReadingCps": 22
+  },
+  "placement": {
+    "zone": {
+      "y0": 1200,
+      "y1": 1470
+    },
+    "maxWidthPx": 860,
+    "align": "center"
+  },
+  "animation": {
+    "enter": "fade",
+    "exit": "cut",
+    "durationMs": 120,
+    "intensity": 0.2
+  },
+  "emoji": false,
+  "censor": "none"
+}

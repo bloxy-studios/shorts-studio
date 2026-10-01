@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "intents": { "L1": "hook", "L2": "point", "L3": "point", "L4": "outro" },
+  "title": "The hard part isn't the code",
+  "cta": null,
+  "runs": [
+    {
+      "lines": ["L1"],
+      "subject": "Writing the code (what most people think is hard)",
+      "items": [
+        {
+          "id": "editor",
+          "kind": "code",
+          "x": 90,
+          "y": 335,
+          "w": 900,
+          "h": 680,
+          "title": "product.ts",
+          "lines": ["function buildProduct() {", "  writeTheCode()", "  return product", "}"],
+          "typeAt": { "word": "think" },
+          "cps": 30
+        }
+      ],
+      "innerZoom": [{ "target": "editor", "scale": 1.2, "dur": 0.5, "origin": { "x": 0.3, "y": 0.4 }, "when": { "word": "code" } }],
+      "sources": [{ "url": "generated", "kind": "generated", "disclosed": true, "note": "illustrative code, not a real product" }]
+    },
+    {
+      "lines": ["L2", "L3"],
+      "subject": "Deciding what not to build → every feature is a promise",
+      "items": [
+        {
+          "id": "roadmap",
+          "kind": "list",
+          "x": 110,
+          "y": 315,
+          "w": 860,
+          "h": 720,
+          "title": "Roadmap",
+          "rows": [
+            { "text": "Fast checkout", "mark": "check" },
+            { "text": "AI summaries", "mark": "cross", "markAt": { "word": "not" } },
+            { "text": "Plugin store", "mark": "cross", "markAt": { "word": "build" }, "sound": false }
+          ]
+        },
+        { "id": "promise", "kind": "document", "x": 1290, "y": 275, "w": 760, "h": 800, "title": "Feature #12", "lines": ["~", "~", "~", "~", "~"], "stamp": { "text": "Forever", "at": { "word": "forever" } } }
+      ],
+      "camera": [{ "kind": "whip", "to": "promise", "when": { "word": "every" } }],
+      "sources": [{ "url": "generated", "kind": "generated", "disclosed": true, "note": "illustrative roadmap" }]
+    },
+    {
+      "lines": ["L4"],
+      "subject": "Ship small, then listen",
+      "items": [
+        {
+          "id": "app",
+          "kind": "chat",
+          "x": 90,
+          "y": 305,
+          "w": 900,
+          "h": 740,
+          "app": "Release",
+          "prompt": "v0.1: one feature, done well",
+          "typeAt": { "word": "start" },
+          "sendAt": { "word": "ship" },
+          "response": "First user: “Love it. Can it export to PDF?”",
+          "responseAt": { "word": "listen" }
+        }
+      ],
+      "sources": [{ "url": "generated", "kind": "generated", "disclosed": true, "note": "illustrative app and feedback" }]
+    }
+  ]
+}

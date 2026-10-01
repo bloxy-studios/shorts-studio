@@ -1,0 +1,85 @@
+{
+  "id": "luxury-tech",
+  "version": "1.0.0",
+  "name": "Luxury Tech",
+  "description": "Bright, sparse world of floating white cards. Source camera footage stays static; graphics carry all movement. 1080x1920 at 60 fps with code-synthesized music and SFX.",
+  "output": { "width": 1080, "height": 1920, "fpsPolicy": "fixed", "fps": { "num": 60, "den": 1 }, "maxFps": 60, "crf": 16, "x264Preset": "slow" },
+  "framing": {
+    "cameraFootageMotion": "none",
+    "punchIn": null,
+    "switching": { "minHoldMs": 0, "hysteresisMs": 0, "deadZoneFrac": 1, "maxVelocityFracPerSec": 0.0001, "smoothingMs": 0, "resetAtSceneCuts": true, "minLinkConfidence": 0.7 },
+    "headroomFrac": 0.1,
+    "eyeLineFrac": 0.36,
+    "layoutsAllowed": ["lt-full-camera", "lt-split", "lt-full-visual"],
+    "defaultLayout": "lt-split",
+    "rapidAlternationPolicy": "wide",
+    "lowConfidenceFallback": "static-center"
+  },
+  "pacing": { "preRollMs": 40, "postRollMs": 0, "silenceCompress": { "aboveMs": 250, "toMs": 120 }, "jCut": { "enabled": true, "leadMs": 50 }, "tailFadeMaxMs": 170, "maxQuietJoinMs": 150, "keepReactionTails": false },
+  "captions": {
+    "defaultStyleId": "luxury-tech",
+    "allowedStyleIds": ["luxury-tech"],
+    "zones": {
+      "lt-split": { "y0": 941, "y1": 1114 },
+      "lt-full-camera": { "y0": 1267, "y1": 1536 },
+      "lt-full-visual": { "y0": 1267, "y1": 1536 },
+      "lt-full-visual-low-content": { "y0": 365, "y1": 634 },
+      "outro": { "y0": 1037, "y1": 1306 }
+    },
+    "startAfterFirstFrame": true
+  },
+  "audio": {
+    "sourceAudioPolicy": "voice-only",
+    "voiceChain": { "highpassHz": 80, "denoise": "light", "deess": true, "compress": true },
+    "voiceTargetLufs": -14,
+    "music": { "mode": "synth", "targetLufs": -24, "ducking": false, "bpmRange": [100, 120], "fadeOutMs": 800, "declickMs": 5 },
+    "sfx": {
+      "enabled": true,
+      "maxWhooshPerRun": 1,
+      "maxWhooshTotal": 3,
+      "relPeakDb": { "click": -10, "pop": -10, "chime": -10, "whoosh": -9, "tick": -16, "riser": -14 }
+    },
+    "riser": { "enabled": true, "minMs": 2000, "maxMs": 3000, "relPeakDb": -14 },
+    "masterTargetLufs": -14,
+    "maxTruePeakDbtp": -1,
+    "toleranceLu": 0.5
+  },
+  "graphics": {
+    "enabled": true,
+    "worldCamera": true,
+    "motionBlur": { "enabled": true, "samplesPerFrame": 4, "shutter": 0.75, "maxSigmaPx": 40 },
+    "tokens": { "$ref": "presets/luxury-tech/tokens.json" }
+  },
+  "scoring": {
+    "weights": { "hook": 20, "payoff": 20, "standalone": 20, "emotion": 15, "delivery": 15, "fit": 10 },
+    "penalties": { "missing-setup": 12, "unresolved-reference": 10, "weak-delivery": 8, "misleading-truncation": 15, "poor-audio": 10, "duplicate": 20, "unusable-crop": 12 }
+  },
+  "selection": { "maxIou": 0.1, "minGapSec": 4, "durationBand": { "minSec": 20, "maxSec": 75 } },
+  "takes": { "policy": "last-complete", "allowEarlierOnDefect": true },
+  "cover": { "enabled": true, "style": "luxury-cover" },
+  "rules": [
+    { "id": "lt-static-footage", "area": "framing", "rule": "No zoom, pan, punch-in or movement applied to source camera footage; crops are fixed per run", "hard": true, "source": "preset" },
+    { "id": "lt-60fps", "area": "export", "rule": "Deliver 1080x1920 at 60 fps", "param": { "width": 1080, "height": 1920, "fps": 60 }, "hard": true, "source": "preset" },
+    { "id": "lt-hard-cuts", "area": "layout", "rule": "Hard picture cuts at every layout join; no wipes or forced transitions across camera footage", "hard": true, "source": "preset" },
+    { "id": "lt-run-length", "area": "layout", "rule": "No uninterrupted layout run longer than ~8 s; avoid consecutive runs of the same layout", "param": 8, "unit": "s", "tolerance": 1, "hard": false, "source": "preset" },
+    { "id": "lt-hook-split", "area": "layout", "rule": "First sentence/hook uses the split layout; CTA/outro uses full camera", "hard": false, "source": "preset" },
+    { "id": "lt-eye-contact", "area": "layout", "rule": "Show camera only while the presenter appears to look at the lens; otherwise full visual", "hard": false, "source": "preset" },
+    { "id": "lt-preroll", "area": "timing", "rule": "Pre-roll before the first word", "param": 40, "unit": "ms", "tolerance": 15, "hard": false, "source": "preset" },
+    { "id": "lt-pause-compress", "area": "timing", "rule": "Quiet stretches over 250 ms compress toward 120 ms; natural short pauses stay", "param": { "aboveMs": 250, "toMs": 120 }, "hard": false, "source": "preset" },
+    { "id": "lt-jcut", "area": "timing", "rule": "Interior joins may use audio-only J-cuts with voice leading picture by ~50 ms; never before timeline zero", "param": 50, "unit": "ms", "hard": false, "source": "preset" },
+    { "id": "lt-tail-fade", "area": "timing", "rule": "Hold outgoing tail through natural decay then fade up to ~170 ms without speech overlap", "param": 170, "unit": "ms", "hard": false, "source": "preset" },
+    { "id": "lt-quiet-join", "area": "timing", "rule": "No unintended quiet stretch longer than 150 ms at a join", "param": 150, "unit": "ms", "hard": true, "source": "preset" },
+    { "id": "lt-caption-start", "area": "captions", "rule": "Captions start at the first output frame after frame zero", "hard": true, "source": "preset" },
+    { "id": "lt-highlight-semantic", "area": "captions", "rule": "Yellow Instrument Serif italic highlight on 1-2 meaningful words after 2-3 normal chunks; never consecutive chunks or function words", "hard": true, "source": "preset" },
+    { "id": "lt-voice-lufs", "area": "audio", "rule": "Voice stem integrated loudness", "param": -14, "unit": "LUFS", "tolerance": 0.5, "hard": false, "source": "preset" },
+    { "id": "lt-music-lufs", "area": "audio", "rule": "Music stem integrated loudness, one flat gain, no ducking or automation", "param": -24, "unit": "LUFS", "tolerance": 0.5, "hard": false, "source": "preset" },
+    { "id": "lt-true-peak", "area": "audio", "rule": "Master true peak", "param": -1, "unit": "dBTP", "hard": true, "source": "preset" },
+    { "id": "lt-sfx-meaningful", "area": "audio", "rule": "One synthesized sound per meaningful visible event; none on layout cuts, steps, pushes, glides or ordinary zooms", "hard": true, "source": "preset" },
+    { "id": "lt-whoosh-whip", "area": "audio", "rule": "Whoosh only for a graphics whip, peak at whip midpoint; max 1 per run and 3 per short; vary variants", "hard": true, "source": "preset" },
+    { "id": "lt-synth-only", "area": "audio", "rule": "Music and SFX are synthesized in code; no stock audio", "hard": true, "source": "preset" },
+    { "id": "lt-graphics-density", "area": "graphics", "rule": "One dominant subject and at most one supporting cue per run", "hard": false, "source": "preset" },
+    { "id": "lt-landing-frame", "area": "graphics", "rule": "First frame of each run is a sharp composed landing state with no residual blur", "hard": true, "source": "preset" },
+    { "id": "lt-real-ui", "area": "graphics", "rule": "Use real captures or reconstructions grounded in official material; disclose reconstructions; never fabricate official screenshots or capabilities", "hard": true, "source": "preset" },
+    { "id": "lt-cta-only-if-real", "area": "editorial", "rule": "CTA only when speech or brief contains/requests one; never invent a DM instruction", "hard": true, "source": "preset" }
+  ]
+}

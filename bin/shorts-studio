@@ -1,0 +1,24 @@
+#!/bin/sh
+# Shorts Studio CLI entry point. Self-locating: plugin variables are not present in
+# the Bash tool's environment, so resolve the plugin root from this script's path.
+set -e
+SELF="$0"
+while [ -L "$SELF" ]; do
+  LINK=$(readlink "$SELF")
+  case "$LINK" in /*) SELF="$LINK" ;; *) SELF="$(dirname "$SELF")/$LINK" ;; esac
+done
+ROOT=$(cd "$(dirname "$SELF")/.." && pwd)
+BUN="${SS_BUN_BIN:-$(command -v bun || true)}"
+if [ -z "$BUN" ] && [ -x "$HOME/.bun/bin/bun" ]; then BUN="$HOME/.bun/bin/bun"; fi
+if [ -z "$BUN" ]; then
+  echo "shorts-studio: Bun >= 1.2 is required (https://bun.sh). Install it, or set SS_BUN_BIN." >&2
+  exit 127
+fi
+export SHORTS_STUDIO_PLUGIN_ROOT="$ROOT"
+# Installed copies and plain clones (no node_modules) run the self-contained bundle; a development
+# checkout (.git + installed dependencies) runs the sources so a stale bundle never shadows edits.
+# SS_DEV=1 forces sources, SS_USE_DIST=1 forces the bundle.
+if [ -f "$ROOT/dist/shorts-studio.js" ] && [ -z "$SS_DEV" ] && { [ -n "$SS_USE_DIST" ] || [ ! -d "$ROOT/.git" ] || [ ! -d "$ROOT/node_modules" ]; }; then
+  exec "$BUN" "$ROOT/dist/shorts-studio.js" "$@"
+fi
+exec "$BUN" "$ROOT/packages/cli/src/main.ts" "$@"
